@@ -10,19 +10,38 @@ import UIKit
 
 class CAKeyframeAnimationVC: UIViewController {
 
+    var animView = UIView(frame: CGRect(x: 50, y: 150, width: 70, height: 80))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
         view.backgroundColor = UIColor.white
-        let tempView = UIView(frame: CGRect(x: 50, y: 100, width: 250, height: 500))
-        let bezierPath = UIBezierPath(ovalIn: tempView.frame)
         
-        let animView = UIView(frame: CGRect(x: 50, y: 150, width: 70, height: 80))
         animView.backgroundColor = UIColor.red
         view.addSubview(animView)
         
+        
+    }
+
+    @IBAction func btn1(_ sender: UIButton) {
+        let anima = CAKeyframeAnimation(keyPath: "transform.rotation")
+        anima.values = [-Double.pi/180*4,Double.pi/180*4, -Double.pi/180*4]
+        anima.repeatCount = Float.infinity
+        animView.layer.add(anima, forKey: "shake")
+    }
+    
+    @IBAction func btn2(_ sender: UIButton) {
+        let anima = CAKeyframeAnimation(keyPath: "position")
+        anima.path = UIBezierPath.init(ovalIn: CGRect(x: SCREEN_WIDTH/2 - 100, y: SCREEN_HEIGHT/2 - 100, width: 200, height: 200)).cgPath
+        anima.duration = 2.0
+        animView.layer.add(anima, forKey: "pathAnimation")
+
+    }
+    
+    @IBAction func btn3(_ sender: UIButton) {
+        let tempView = UIView(frame: CGRect(x: 50, y: 100, width: 250, height: 500))
+        let bezierPath = UIBezierPath(ovalIn: tempView.frame)
         let orbitAnim = CAKeyframeAnimation(keyPath: "position")
         orbitAnim.duration = 5
         orbitAnim.path = bezierPath.cgPath
@@ -31,7 +50,7 @@ class CAKeyframeAnimationVC: UIViewController {
         orbitAnim.repeatCount = Float.infinity
         orbitAnim.rotationMode = kCAAnimationRotateAutoReverse
         animView.layer.add(orbitAnim, forKey: "orbitAnim")
-
+        
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.purple.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
@@ -40,29 +59,7 @@ class CAKeyframeAnimationVC: UIViewController {
         shapeLayer.lineCap = kCALineCapRound
         shapeLayer.path = bezierPath.cgPath
         view.layer.addSublayer(shapeLayer)
-        
-        
-        
-//        let anima = CAKeyframeAnimation(keyPath: "key")
-//        let v0 = NSValue.init(cgPoint: CGPoint.init(x: 0, y: SCREEN_WIDTH/2 - 50))
-//        let v1 = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH/3, y: SCREEN_WIDTH/2 - 50))
-//        let v2 = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH/3, y: SCREEN_WIDTH/2 + 50))
-//        let v3 = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH*2/3, y: SCREEN_WIDTH/2 + 50))
-//        let v4 = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH*2/3, y: SCREEN_WIDTH/2 - 50))
-//        let v5 = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH, y: SCREEN_WIDTH/2 - 50))
-//        anima.values = [v0,v1,v2,v3,v4,v5]
-//        anima.duration = 2.0
-////        anima.timingFunctions = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-//        animView.layer.add(anima, forKey: nil)
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
 
 }

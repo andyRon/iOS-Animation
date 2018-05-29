@@ -17,6 +17,7 @@
 		EFAB7CC020BC54B400D7FF9B /* CAAnimationGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7CBF20BC54B400D7FF9B /* CAAnimationGroupVC.swift */; };
 		EFAB7CC220BC5BCE00D7FF9B /* CATransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7CC120BC5BCE00D7FF9B /* CATransitionVC.swift */; };
 		EFAB7CC420BC735000D7FF9B /* drawLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7CC320BC735000D7FF9B /* drawLineVC.swift */; };
+		EFAB7CC620BC843700D7FF9B /* CASpringAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7CC520BC843700D7FF9B /* CASpringAnimationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EFAB7CBF20BC54B400D7FF9B /* CAAnimationGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationGroupVC.swift; sourceTree = "<group>"; };
 		EFAB7CC120BC5BCE00D7FF9B /* CATransitionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransitionVC.swift; sourceTree = "<group>"; };
 		EFAB7CC320BC735000D7FF9B /* drawLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawLineVC.swift; sourceTree = "<group>"; };
+		EFAB7CC520BC843700D7FF9B /* CASpringAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CASpringAnimationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				EF18A76220BC30C2003D0BDA /* CAKeyframeAnimationVC.swift */,
 				EFAB7CBF20BC54B400D7FF9B /* CAAnimationGroupVC.swift */,
 				EFAB7CC120BC5BCE00D7FF9B /* CATransitionVC.swift */,
+				EFAB7CC520BC843700D7FF9B /* CASpringAnimationVC.swift */,
 				EFAB7CC320BC735000D7FF9B /* drawLineVC.swift */,
 				EF18A75220BC071B003D0BDA /* Main.storyboard */,
 				EF18A75520BC071C003D0BDA /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				EF18A74F20BC071B003D0BDA /* AppDelegate.swift in Sources */,
 				EFAB7CC420BC735000D7FF9B /* drawLineVC.swift in Sources */,
 				EFAB7CC020BC54B400D7FF9B /* CAAnimationGroupVC.swift in Sources */,
+				EFAB7CC620BC843700D7FF9B /* CASpringAnimationVC.swift in Sources */,
 				EFAB7CC220BC5BCE00D7FF9B /* CATransitionVC.swift in Sources */,
 				EF18A76120BC240B003D0BDA /* CABaseAnimationVC.swift in Sources */,
 				EF18A76320BC30C2003D0BDA /* CAKeyframeAnimationVC.swift in Sources */,

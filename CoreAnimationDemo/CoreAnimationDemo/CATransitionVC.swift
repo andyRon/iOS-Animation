@@ -55,10 +55,6 @@ class CATransitionVC: UIViewController {
             self.curl()
         case "UnCurl":
             self.unCurl()
-        case "caOpen":
-            self.caOpen()
-        case "caClose":
-                self.caClose()
         default:
             return
         }
@@ -147,22 +143,7 @@ class CATransitionVC: UIViewController {
         anima.duration = 1.0
         showView?.layer.add(anima, forKey: "pageUnCurl")
     }
-    func caOpen() {
-        self.changeView(isUp: true)
-        let anima = CATransition()
-        anima.type = "cameraIrisHollowOpen"
-        anima.subtype = kCATransitionFromRight
-        anima.duration = 1.0
-        showView?.layer.add(anima, forKey: "cameraIrisHollowOpen")
-    }
-    func caClose() {
-        self.changeView(isUp: true)
-        let anima = CATransition()
-        anima.type = "cameraIrisHollowClose"
-        anima.subtype = kCATransitionFromRight
-        anima.duration = 1.0
-        showView?.layer.add(anima, forKey: "cameraIrisHollowClose")
-    }
+
     
     func changeView(isUp: Bool) {
         if index>3 {

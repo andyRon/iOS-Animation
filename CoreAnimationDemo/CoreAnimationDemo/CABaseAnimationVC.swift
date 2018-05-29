@@ -38,7 +38,7 @@ class CABaseAnimationVC: UIViewController {
         moveAnim.autoreverses = true
         // 以下两句 控制View动画结束后，停留在动画结束的位置
         //        moveAnim.isRemovedOnCompletion = false
-        //        moveAnim.fillMode = kCAFillModeForwards
+//                moveAnim.fillMode = kCAFillModeForwards
         
         moveView.layer.add(moveAnim, forKey: "moveAnim")
     }
@@ -122,11 +122,6 @@ class CABaseAnimationVC: UIViewController {
         scaleAnimY.repeatCount = Float.infinity
         scaleViewY.layer.add(scaleAnimY, forKey: "scaleAnimY")
         
-        
-        
-        
-        
-        
        
     }
     
@@ -195,16 +190,17 @@ class CABaseAnimationVC: UIViewController {
     @IBAction func alphaPressed(_ sender: UIButton) {
         self.delSubviews()
 
-        /**------------------------内容变化动画-------------------------------------*/
-        let imageView = UIImageView(frame: CGRect(x: 150, y: 310, width: 70, height: 70))
-        imageView.image = UIImage(named: "from")
-        view.addSubview(imageView)
-        let contentsAnim = CABasicAnimation(keyPath: "contents")
-        contentsAnim.toValue = UIImage(named: "to")?.cgImage
-        contentsAnim.duration = 1.5
-        contentsAnim.autoreverses = true
-        contentsAnim.repeatCount = Float.infinity
-        imageView.layer.add(contentsAnim, forKey: "contentsAnim")
+        /**------------------------透明动画-------------------------------------*/
+        let alphaView = UIView(frame: CGRect(x: 150, y: 320, width: 70, height: 70))
+        alphaView.backgroundColor = UIColor.red
+        view.addSubview(alphaView)
+        let alphaAnim = CABasicAnimation(keyPath: "opacity")
+        alphaAnim.fromValue = 0.3
+        alphaAnim.toValue = 1
+        alphaAnim.duration = 2
+        alphaAnim.autoreverses = true
+        alphaAnim.repeatCount = Float.infinity
+        alphaView.layer.add(alphaAnim, forKey: "alphaAnim")
     }
     
 }
